@@ -3,7 +3,7 @@ package uz.pdp;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
-@Aspect
+
 @Component
 public class MySpringAOP {
 
