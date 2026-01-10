@@ -2,6 +2,7 @@ package uz.pdp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class Homecontroller {
@@ -11,9 +12,12 @@ public class Homecontroller {
         return "home";
     }
 
-    @PostMapping("/home")
-    public String homePost() {
-        return "<h1>Welcome to Home Page</h1>";
+    @GetMapping("/homeModel")
+    public ModelAndView homeModel() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("homeModel");
+        modelAndView.addObject("name", "John Doe");
+        return modelAndView;
     }
 
     @DeleteMapping("/home")
